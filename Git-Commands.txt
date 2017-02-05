@@ -1,0 +1,51 @@
+#Nov 12, 2015
+#Sucessfully tested on Mac OSX 10.11.1 El Capitan
+#With Git 2.6.2 and an account on GitHub
+
+git help
+-> Displays 21 most common git commands
+
+git config
+-> Setting up configurations ...for examples see file Git_SetUp.txt
+
+git init 
+-> Initializes git repo (repository) ...git starts tracking it  
+
+git Status
+-> Status of the current Repository, current branch, files to add/commit
+
+git add 
+-> To update git with new changes
+	git add <FILE_NAME> -> add a file
+	git add . ->add all files
+
+git commit -m "<TYPE_Message_HERE>"
+-> Makes the Snapshot of the repository
+
+git push 
+-> Pushes changes to the GitHub repo ...for branch specific push command refer to Git_StartUp.txt
+
+git pull
+-> Updates local repo in accordance of GitHub repo  
+
+git clone REPO/FORK_LINK
+-> Create copy of remote repo to local system ...for more information refer to document Git_StartUp.txt
+
+git checkout
+-> 'git checkout <BRANCH_NAME>' allows to check branch 
+
+git branch 
+-> Displys current branch 
+	git branch -a-> Displays all the available branches
+	git branch add -b <BRANCH_NAME> 
+
+git merge
+-> To merge branch with the master branch 
+
+git log
+-> Displays log 
+	git log -p-> Displays log with difference beetween each commit
+	git log -p -2-> Limits result to lates 2 entries
+
+git remote -v
+	

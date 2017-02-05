@@ -1,0 +1,60 @@
+#Nov 12, 2015
+#Instructions for Mac System
+#Sucessfully tested for Mac OSX 10.11.1 El Capitan
+#With Git 2.6.2 and an account on GitHub
+
+Step1: Download Git from the website - follow onscreen instructions to install on the system.
+
+	Check Git Inatallation:
+		which git  	...path where Git is Installed 
+		git --version	...version of Git Installed
+
+Step2: Git stores Configurations @3 different locations->
+		1. For system level use-> "git config --system"
+			...for all users on system
+			...stores @ "/etc/gitconfig"
+		2. For single user config-> "git config --global"
+			...single user configuration
+			...~/.gitconfig
+		3. For project level config-> "git config"
+			...PROJECT_NAME/.git/config
+
+	Configure Git with User Name & eMail address (No Online acount required, 	
+	could be anything, But if GitHub account exists use associated eMail)
+	Using commands:
+		git config --global user.name "YOUR_NAME_HERE"
+		git config --global user.email "YOUR_eMAIL_HERE"
+	Check Configuration using:
+		git config user.name
+		git config user.email
+		git config --list	...for complete list of all the config
+
+Step3: Cosmetic Configurations (Optional)
+	1. To set default TextEditor use:
+		git config --global core.editor "vim"
+	2. To display color specific text in  code area:
+		git config --global color.ui true
+
+Step4: SetUp AutoCompletion for git commands: (Optional)
+	1. Download using Terminal, enter command:
+		curl -OL https://github.com/git/git/raw/master/contrib/completion/git-completion.bash
+	2. Rename Downloaded .bash file using command:
+		mv ~/git-completion.bash ~/.git-completion.bash
+	3. Make changes to the .bash_profile file (to load the downloaded 
+	 'autoCompletion' file each time 'Terminal' is opened):
+		-Open nano editor to open change/create .bash_profile file using:
+			nano .bash_profile
+		-Add following code @bottom of the file;
+			if [ -f ~/.git-completion.bash ]; then
+				source ~/.git-completion.bash
+			fi
+		-save & exit file using key combination: 'control'+'x'
+		-save changes in same file press: 'y/Y' + PRESS 'enter'
+			...#In some OSX version this file may not exist, FOLLOW same instruction 
+	 	and create new .bash_profile file
+
+References:
+
+[1] Git Tutorial by Web Technology Tv on YouTube.com
+
+#yogi

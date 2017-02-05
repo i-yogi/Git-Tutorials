@@ -1,0 +1,70 @@
+#Adding existing project to GitHub from local Git
+
+Step1: Crete new repo on GitHub, to avoid errors do not initialize repo with README, license or 'gitignore' ... can add these files later
+
+Step2: On local system initialize project directory with 'git init'
+	
+Step3: Add files to local repo using 'git add .' and then commit changes using 
+	'git commit -m "<type_your_msg>"'
+
+Step4: Now to connect local repo to remote repo create a REMOTE using command:
+	'git remote add <name_remote> <http_link_to_GitHub_repo>'
+		...by convention default remote is "origin"
+		...https link for perticular repo from website 
+	'git remote -v'		
+		...Verify new remote
+	
+Step5: Finally PUSH the project to GitHub using command
+	'git push <remote_name> <branch_name>'
+		...pushes changes to remote repo
+
+#Clone the remote repo to local system
+
+Step1: git clone <https_link_to_repo>
+		...clones the remote repo to local system
+		...similar for 'forked-repo'
+
+	*when fork repo create new remote to manage the clone from local system:
+		create remote uning command:
+			'git remote add <REMOTE_NAME> <https_URL_FOR_FORK>'
+
+#Creating new branch to make changes (keep master branch unaffected)
+
+	*'git branch'		...displays local branch
+	 'git branch -a' 	...all branched for the repo
+	
+	*'git checkput <REMOTE>/<BRANCH_NAME>' 
+				...peek at branch
+	 To track/work @local system 
+	 'git checkout -b <local_BRANCH_NAME> <REMOTE>/<BRANCH_NAME>'
+	
+	*Can push changes to branch 
+	 'git branch <LOCAL_BRANCH_NAME> -t <REMOTE>/<BRANCH_NAME>'
+
+Step1: Pull changes from upstream, master branch should be updated
+
+Step2: Crate new branch using:
+	'git checkout -b <NEW_BRANCH_NAME>'
+
+Step3: add and commit changes as always
+
+Step4: Push changes to the GitHub using command:
+	'git push <REMOTE_NAME> <BRANCH_NAME>'
+		...Assumes same name for both local/remote repo
+	
+	 'git push <REMOTE_NAME> <local_BRANCH>:<remote_BRANCH>'
+
+	*To UPDATE branch from remote to local system use command:
+		'git fetch <REMOTE_NAME>'
+
+	*To DELETE branch on local system:
+		'git branch -d <BRANCH_NAME>'	...use D to force delete
+	*To DELETE branch from GitHub:
+		'git push <REMOTE_NAME> :[<BRANCH_NAME>]'
+	*For more info on REMOTE:
+		'git remote show <REMOTE_NAME>'
+
+#References:
+
+[1] http://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/ -Nov 12, 2015
+
